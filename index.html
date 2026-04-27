@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShopFind — City & Product Filter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background blobs -->
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
+
+  <header class="header">
+    <div class="logo">Shop<span>Find</span></div>
+    <p class="tagline">Discover products across cities</p>
+  </header>
+
+  <main class="main">
+
+    <!-- Search & Filter Bar -->
+    <section class="filter-section">
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search products..."/>
+        <button class="clear-btn" id="clearBtn" title="Clear">✕</button>
+      </div>
+
+      <div class="filters">
+        <div class="filter-group">
+          <label class="filter-label">🏙 City</label>
+          <div class="chip-group" id="cityFilter">
+            <button class="chip active" data-value="all">All</button>
+            <button class="chip" data-value="Mumbai">Mumbai</button>
+            <button class="chip" data-value="Delhi">Delhi</button>
+            <button class="chip" data-value="Bangalore">Bangalore</button>
+            <button class="chip" data-value="Pune">Pune</button>
+            <button class="chip" data-value="Nagpur">Nagpur</button>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">📦 Category</label>
+          <div class="chip-group" id="categoryFilter">
+            <button class="chip active" data-value="all">All</button>
+            <button class="chip" data-value="Electronics">Electronics</button>
+            <button class="chip" data-value="Fashion">Fashion</button>
+            <button class="chip" data-value="Food">Food</button>
+            <button class="chip" data-value="Books">Books</button>
+            <button class="chip" data-value="Sports">Sports</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="results-meta" id="resultsMeta">Showing <span id="count">0</span> results</div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="products-section">
+      <div class="product-grid" id="productGrid"></div>
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <div class="empty-icon">🔍</div>
+        <h3>No products found</h3>
+        <p>Try adjusting your filters or search term.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 ShopFind · Built with ♥ in India</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
